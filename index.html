@@ -18,34 +18,292 @@
 <body class="bg-white font-face-poppins " >
 
     <nav class="container mx-auto bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between p-6 mt-4 border-2 rounded-2xl border-gray-100 shadow-md">
-      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="./assets/logo.png" class="h-8" alt="Flowbite Logo" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"><span class="font-normal">Dev</span>Board</span>
-      </a>
-      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-      </button>
-      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <div class="font-medium flex flex-col justify-center items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <div class="flex flex-row gap-2">
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-            <img src="./assets/checkbox.png" alt="">
-            </a>
-            <h2 id="taskDone" class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                23
-            </h2>
-            </div>
-            <div onclick="changeBackgroundColor()">
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-            <img src="./assets/theme-btn.png" alt="">
-            </a>
-            </div>
-      </div>
-      </div>
+        <a href="./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="./assets/logo.png" class="h-8" alt="DevBoard Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"><span class="font-normal">Dev</span>Board</span>
+        </a>
+        <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+          <div class="font-medium flex flex-col justify-center items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <div class="flex flex-row gap-2">
+              <div class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              <img src="./assets/checkbox.png" alt="">
+              </div>
+              <h2 id="taskDone" class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  23
+              </h2>
+              </div>
+              <div onclick="changeBackgroundColor()">
+              <div class="block cursor-pointer py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              <img src="./assets/theme-btn.png" alt="">
+              </div>
+              </div>
+        </div>
+        </div>
     </nav>
+
+    <section id="task-dashboard" class="container mx-auto p-3 mt-3 bg-white rounded-lg grid grid-cols-7 gap-6">
+
+        <div class="col-span-5 flex flex-col gap-4">
+        
+        <div id="dashboard" class="grid grid-cols-4 gap-4">
+            <!-- Task Assigned Count -->
+            <div class="grid grid-cols-3 items-center  p-6 bg-white border border-gray-200
+            rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <div class="flex justify-center">
+                <img src="./assets/checkbox.png" alt="">
+            </div>
+            <div class="col-span-2">
+                <p class="font-semibold text-gray-700 dark:text-gray-400">Task Assigned</p>
+                <h2 id="taskAssigned" class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    06
+                </h2>
+            </div>
+            </div>
+            <!-- blog link board  -->
+            <a href="./blog.html" class=" col-span-2 grid grid-cols-3 items-center p-6
+            bg-linear-to-r/srgb from-[#3752FD] to-[#9BA8F8] via-[#6C7FFA]
+            rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <div class="flex justify-center">
+                <img src="./assets/board.png" alt="">
+            </div>
+            <div class="col-span-2">
+                <p class="font-semibold text-xl text-white dark:text-white">Discover Something<br> New Today!</p>
+                <!-- <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    05
+                </h5> -->
+            </div>
+            </a>
+            <!-- Current Date  -->
+            <div class=" grid grid-cols-3 justify-center items-center p-6 bg-white border border-gray-200
+            rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <div class="flex justify-center">
+                <img src="./assets/calender.png" alt="">
+            </div>
+            <div class="col-span-2">
+                <p id="day" class="font-semibold text-[#00303C] dark:text-gray-400">
+
+                </p>
+                <h5 id="date" class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    
+                </h5>
+            </div>
+            </div>
+        </div>
+
+        <div id="task-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <!-- card - 1 - Fix Mobile Button Issue  -->
+            <div class="p-3 rounded-lg border-1 border-gray-100 shadow-md">
+                <div class="">
+                <p class="text-lg font-medium text-[#00303C] opacity-80 p-3">ShopEase</p>
+                <h1 id="title1" class="text-2xl font-semibold">Fix Mobile Button Issue </h1>
+                <p class="truncatText text-gray-500 p-3">
+                    Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                    and ensure onClick works properly.</p>
+                
+                </div>
+                <div class="my-3 flex flex-col gap-2 sm:grid sm:grid-cols-7">
+                    <div class="sm:col-span-4 flex flex-col justify-center">
+                    <p class="text-[#00303C] opacity-80 text-base font-semibold text-center sm:text-left">Deadline</p>
+                    <h1 class="deadline text-[#00303C] text-lg font-semibold  text-center sm:text-left">
+
+                    </h1>
+                    </div>
+
+                    <div class="sm:col-span-3 flex items-center  justify-center">
+                        <button id="btn1" type="button" class="cursor-pointer clearLog text-white bg-[#3752FD] hover:bg-black 
+                        font-medium rounded-lg text-sm px-5 py-2.5 
+                        dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        onclick="completed('title1','btn1')">
+                        Completed
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- card - 2 - Add Dark Mode  -->
+            <div class="p-3 rounded-lg border-1 border-gray-100 shadow-md">
+                <div class="">
+                <p class="text-lg font-medium text-[#00303C] opacity-80 p-3">CloudSync</p>
+                <h1 id="title2" class="text-2xl font-semibold">Add Dark Mode</h1>
+                <p class="truncatText text-gray-500 p-3">
+                    Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                    and ensure onClick works properly.</p>
+                
+                </div>
+                <div class="my-3 flex flex-col gap-2 sm:grid sm:grid-cols-7">
+                    <div class="sm:col-span-4 flex flex-col justify-center">
+                    <p class="text-[#00303C] opacity-80 text-base font-semibold text-center sm:text-left">Deadline</p>
+                    <h1 class="deadline text-[#00303C] text-lg font-semibold  text-center sm:text-left">
+
+                    </h1>
+                    </div>
+
+                    <div class="sm:col-span-3 flex items-center  justify-center">
+                        <button id="btn2" type="button" class="cursor-pointer clearLog text-white bg-[#3752FD] hover:bg-black 
+                        font-medium rounded-lg text-sm px-5 py-2.5 
+                        dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        onclick="completed('title2','btn2')">
+                        Completed
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- card - 3 - Optimize  Home page   -->
+            <div class="p-3 rounded-lg border-1 border-gray-100 shadow-md">
+                <div class="">
+                <p class="text-lg font-medium text-[#00303C] opacity-80 p-3">SwiftPay</p>
+                <h1 id="title3" class="text-2xl font-semibold">Optimize  Home page</h1>
+                <p class="truncatText text-gray-500 p-3">
+                    Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                    and ensure onClick works properly.</p>
+                
+                </div>
+                <div class="my-3 flex flex-col gap-2 sm:grid sm:grid-cols-7">
+                    <div class="sm:col-span-4 flex flex-col justify-center">
+                    <p class="text-[#00303C] opacity-80 text-base font-semibold text-center sm:text-left">Deadline</p>
+                    <h1 class="deadline text-[#00303C] text-lg font-semibold  text-center sm:text-left">
+
+                    </h1>
+                    </div>
+
+                    <div class="sm:col-span-3 flex items-center  justify-center">
+                        <button id="btn3" type="button" class="cursor-pointer clearLog text-white bg-[#3752FD] hover:bg-black 
+                        font-medium rounded-lg text-sm px-5 py-2.5 
+                        dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        onclick="completed('title3','btn3')">
+                        Completed
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- card - 4 - Add new emoji 🤲  -->
+            <div class="p-3 rounded-lg border-1 border-gray-100 shadow-md">
+                <div class="">
+                <p class="text-lg font-medium text-[#00303C] opacity-80 p-3">Meta</p>
+                <h1 id="title4" class="text-2xl font-semibold">Add new emoji 🤲</h1>
+                <p class="truncatText text-gray-500 p-3">
+                    Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                    and ensure onClick works properly.</p>
+                
+                </div>
+                <div class="my-3 flex flex-col gap-2 sm:grid sm:grid-cols-7">
+                    <div class="sm:col-span-4 flex flex-col justify-center">
+                    <p class="text-[#00303C] opacity-80 text-base font-semibold text-center sm:text-left">Deadline</p>
+                    <h1 class="deadline text-[#00303C] text-lg font-semibold  text-center sm:text-left">
+
+                    </h1>
+                    </div>
+
+                    <div class="sm:col-span-3 flex items-center  justify-center">
+                        <button id="btn4" type="button" class="cursor-pointer clearLog text-white bg-[#3752FD] hover:bg-black 
+                        font-medium rounded-lg text-sm px-5 py-2.5 
+                        dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        onclick="completed('title4','btn4')">
+                        Completed
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- card - 5 - Integrate OpenAI API   -->
+            <div class="p-3 rounded-lg border-1 border-gray-100 shadow-md">
+                <div class="">
+                <p class="text-lg font-medium text-[#00303C] opacity-80 p-3">Google LLC</p>
+                <h1 id="title5" class="text-2xl font-semibold">Integrate OpenAI API</h1>
+                <p class="truncatText text-gray-500 p-3">
+                    Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                    and ensure onClick works properly.</p>
+                
+                </div>
+                <div class="my-3 flex flex-col gap-2 sm:grid sm:grid-cols-7">
+                    <div class="sm:col-span-4 flex flex-col justify-center">
+                    <p class="text-[#00303C] opacity-80 text-base font-semibold text-center sm:text-left">Deadline</p>
+                    <h1 class="deadline text-[#00303C] text-lg font-semibold  text-center sm:text-left">
+
+                    </h1>
+                    </div>
+
+                    <div class="sm:col-span-3 flex items-center  justify-center">
+                        <button id="btn5" type="button" class="cursor-pointer clearLog text-white bg-[#3752FD] hover:bg-black 
+                        font-medium rounded-lg text-sm px-5 py-2.5 
+                        dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        onclick="completed('title5','btn5')">
+                        Completed
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- card - 6 - Improve Job searching  -->
+            <div class="p-3 rounded-lg border-1 border-gray-100 shadow-md">
+                <div class="">
+                <p class="text-lg font-medium text-[#00303C] opacity-80 p-3">Glassdoar</p>
+                <h1 id="title6" class="text-2xl font-semibold">Improve Job searching</h1>
+                <p class="truncatText text-gray-500 p-3">
+                    Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                    and ensure onClick works properly.</p>
+                
+                </div>
+                <div class="my-3 flex flex-col gap-2 sm:grid sm:grid-cols-7">
+                    <div class="sm:col-span-4 flex flex-col justify-center">
+                    <p class="text-[#00303C] opacity-80 text-base font-semibold text-center sm:text-left">Deadline</p>
+                    <h1 class="deadline text-[#00303C] text-lg font-semibold  text-center sm:text-left">
+
+                    </h1>
+                    </div>
+
+                    <div class="sm:col-span-3 flex items-center  justify-center">
+                        <button id="btn6" type="button" class="cursor-pointer clearLog text-white bg-[#3752FD] hover:bg-black 
+                        font-medium rounded-lg text-sm px-5 py-2.5 
+                        dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        onclick="completed('title6','btn6')">
+                        Completed
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+
+        </div>
+        <div class=" col-span-2 items-center p-6 bg-white border border-gray-200 rounded-lg shadow-sm 
+        dark:bg-gray-800 dark:border-gray-700 
+        flex flex-col gap-2">
+
+        <div class="flex flex-row gap-2 justify-center">
+            <img src="./assets/activity.png" alt="">
+            Activity Log
+        </div>
+        
+        <div class="sm:col-span-3 flex items-center  justify-center">
+            <button id="clear" type="button" class="cursor-pointer text-white bg-[#3752FD] hover:bg-black 
+            font-medium rounded-lg text-sm px-5 py-2.5 
+            dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            onclick="clearHistory()">
+            Clear History
+            </button>
+        </div>
+
+        <div id="activityLog" class="mt-4 flex flex-col gap-3 items-center">
+
+        </div>
+
+        </div>
+    </section>
 
 </body>
 </html>
