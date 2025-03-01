@@ -15,7 +15,132 @@
     <title>Dev Board</title>
 </head>
 <body>
+
+    <nav class="container mx-auto bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between p-6 mt-2 border-2 rounded-2xl border-gray-100 shadow-md">
+        <a href="./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="./assets/logo.png" class="h-8" alt="DevBoard Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"><span class="font-normal">Dev</span>Board</span>
+        </a>
+        <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <div class="font-medium flex flex-col justify-center items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg
+                bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 
+                md:dark:bg-gray-900 dark:border-gray-700">
+                <a href="./" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent
+                    md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500
+                    dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                        <button id="btn1" type="button" class="cursor-pointer clearLog text-white bg-[#3752FD] hover:bg-black 
+                        font-medium rounded-lg text-sm px-5 py-2.5 
+                        dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        onclick="completed('title1','btn1')">
+                        Back to Desk
+                        </button>
+                </a> 
+        </div>
+        </div>
+    </nav>
     
+    <section id="blog" class="container mx-auto">
+        <h2 class="text-xl md:text-2xl font-semibold text-center my-4 ">
+            Blog
+        </h2>
+
+        
+    <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white">
+    
+    <h2 id="accordion-color-heading-1">
+        <button type="button" class=" flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-1 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-1" aria-expanded="true" aria-controls="accordion-color-body-1">
+        <span class="mx-auto sm:mx-0">What are the different ways to select an element in the DOM?</span>
+        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+        </button>
+    </h2>
+    <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
+        <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+         
+        </div>
+    </div>
+    <h2 id="accordion-color-heading-2">
+        <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-1 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-2" aria-expanded="false" aria-controls="accordion-color-body-2">
+        <span class="mx-auto sm:mx-0">What is the difference between innerHTML, innerText, and textContent ?</span>
+        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+        </button>
+    </h2>
+    <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
+        <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+            
+        </div>
+    </div>
+    <h2 id="accordion-color-heading-3">
+        <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-1 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3">
+        <span class="mx-auto sm:mx-0"> What is event delegation in the DOM?</span>
+        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+        </button>
+    </h2>
+    <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
+        <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+
+        </div>
+    </div>
+    <h2 id="accordion-color-heading-4">
+        <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200  focus:ring-1 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-4" aria-expanded="true" aria-controls="accordion-color-body-4">
+        <span class="mx-auto sm:mx-0">What is event bubbling in the DOM?</span>
+        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+        </button>
+    </h2>
+    <div id="accordion-color-body-4" class="hidden" aria-labelledby="accordion-color-heading-4">
+        <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+        
+        </div>
+    </div>
+    <h2 id="accordion-color-heading-5">
+        <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-1 border-gray-200  focus:ring-1 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-5" aria-expanded="true" aria-controls="accordion-color-body-5">
+        <span class="mx-auto sm:mx-0">How do you create, add, and remove elements using JavaScript?</span>
+        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+        </button>
+    </h2>
+    <div id="accordion-color-body-5" class="hidden " aria-labelledby="accordion-color-heading-5">
+    <div class="p-5 rounded-b-xl border border-b-1 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+            <h1 class="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">Creating an Element</h1>
+            <p class="text-gray-500 dark:text-gray-600">You can create an element using the document.createElement() method.</p>     
+            <div class="relative mt-2">
+<pre class="bg-gray-200 text-green-600 px-4 py-2 rounded-md overflow-x-auto">
+<div class="language-html "><div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold text-gray-500">javascript</h2>
+    <button onclick="copyToClipboard('js1')" class="text-gray-500 hover:text-gray-700 cursor-pointer">📋 Copy</button>
+</div>
+const newDiv = document.createElement('div'); <span class="text-gray-400">// element created             </span>
+newDiv.innerText = "Hello, I'm a new div!";   <span class="text-gray-400">// content added               </span>                         
+newDiv.classList.add('new-class');            <span class="text-gray-400">// class added to the element  </span>
+newDiv.style.color = 'blue';                  <span class="text-gray-400">// style added to the element  </span>
+</div><code id="js1" class="language-html hidden">
+const newDiv = document.createElement('div'); // element created
+newDiv.innerText = "Hello, I'm a new div!";   // content added
+newDiv.classList.add('new-class');            // class added to the element
+newDiv.style.color = 'blue';                  // style added to the element
+</code>
+</pre>
+            </div>        
+    </div>
+    </div>
+    </div>
+
+    </section>
+    <script src="./js/functions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 </html>
