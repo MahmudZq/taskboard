@@ -11,14 +11,34 @@
     <!-- flowbite cdn  -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <!-- tailwind cdn  -->
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./style.css">
+    <script>
+    tailwind.config = {
+    theme: {
+    extend: {
+        colors: {
+                primary: '#3752FD',
+                jscomment: '#6a737d',
+                jscode: '#d73a49',
+                jstext: '#032f62',
+                },
+        backgroundImage: {
+                        discoverGradient: 'linear-gradient(45deg, #3752FD, #9BA8F8)',
+                        }
+            }
+        }
+    }
+    </script>
     <title>Dev Board</title>
 </head>
-<body class="bg-white font-face-poppins " >
+<body class="bg-[#3752FD]/10 font-face-poppins text-gray " >
 
-    <nav class="container mx-auto bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between p-6 mt-2 border-2 rounded-2xl border-gray-100 shadow-md">
-        <a href="./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+    <main>
+
+    <div id="dashboardNav">
+    <nav class="container mx-auto bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between p-6 mt-3 border-2 rounded-2xl border-gray-100 shadow-md">
+        <a href="./" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="./assets/logo.png" class="h-8" alt="DevBoard Logo" />
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"><span class="font-normal">Dev</span>Board</span>
         </a>
@@ -29,23 +49,27 @@
             </svg>
         </button>
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <div class="font-medium flex flex-col justify-center items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                <div class="flex flex-row gap-2">
-                <div class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                <img src="./assets/checkbox.png" alt="">
+        <div class="font-medium flex flex-row justify-between items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 
+                    md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white
+                    dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                
+                <div class="flex flex-row items-center gap-2">
+                    <div class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                        <img src="./assets/checkbox.png" alt="">
+                    </div>
+                    <h2 id="taskDone" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        23
+                    </h2>
                 </div>
-                <h2 id="taskDone" class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    23
-                </h2>
-                </div>
-                <div onclick="changeBackgroundColor()">
-                <div class="block cursor-pointer py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                <div onclick="changeBackgroundColor()" class="cursor-pointer py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                 <img src="./assets/theme-btn.png" alt="">
-                </div>
                 </div>
         </div>
         </div>
     </nav>
+    </div> 
+
+    <section id="dashboard">
 
     <section id="task-dashboard" class="container mx-auto p-3 mt-3 bg-white rounded-lg grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
 
@@ -66,16 +90,15 @@
             </div>
             </div>
             <!-- blog link board  -->
-            <a href="./blog.html" class=" lg:col-span-2 grid grid-cols-3 items-center p-6
-            bg-linear-to-r/srgb from-[#3752FD] to-[#9BA8F8] via-[#6C7FFA]
-            rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <div onclick="dashboardToBlog('dashboardNav')" class="bg-discoverGradient border border-gray-200  rounded-lg shadow-sm
+            cursor-pointer lg:col-span-2 grid grid-cols-3 items-center p-6 ">
             <div class="flex justify-center">
                 <img src="./assets/board.png" alt="">
             </div>
             <div class="col-span-2">
                 <p class="font-semibold text-xl text-white dark:text-white">Discover Something<br> New Today!</p>
             </div>
-            </a>
+            </div>
             <!-- Current Date  -->
             <div class=" grid grid-cols-3 justify-center items-center p-6 bg-white border border-gray-200
             rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
@@ -95,15 +118,17 @@
 
         <div id="task-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             <!-- card - 1 - Fix Mobile Button Issue  -->
-            <div class="p-3 rounded-lg border-1 border-gray-100 shadow-md">
+            <div class="p-3 bg-[#3752FD]/10 rounded-lg border-1 border-gray-100 shadow-md">
                 <div class="">
-                <p class="text-lg font-medium text-[#00303C] opacity-80 p-3">ShopEase</p>
-                <h1 id="title1" class="text-2xl font-semibold">Fix Mobile Button Issue </h1>
-                <p class="truncatText text-gray-500 p-3">
+                <p class="text-lg font-medium bg-white text-[#00303C] opacity-80 p-2 my-2 w-fit rounded-md">ShopEase</p>
+                <h1 id="title1" class="text-2xl text-[#00303C] font-semibold">Fix Mobile Button Issue </h1>
+                <p class="truncatText bg-white text-gray-500 p-2 my-2 rounded-md">
                     Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
                     and ensure onClick works properly.</p>
                 
                 </div>
+                <hr class="border-t-2 border-dashed border-[#3752FD]/20 my-4">
+
                 <div class="my-3 flex flex-col gap-2 sm:grid sm:grid-cols-7">
                     <div class="sm:col-span-4 flex flex-col justify-center">
                     <p class="text-[#00303C] opacity-80 text-base font-semibold text-center sm:text-left">Deadline</p>
@@ -121,19 +146,22 @@
                         </button>
                     </div>
 
+                    
+
                 </div>
             </div>
             
             <!-- card - 2 - Add Dark Mode  -->
-            <div class="p-3 rounded-lg border-1 border-gray-100 shadow-md">
+            <div class="p-3 bg-[#3752FD]/10 rounded-lg border-1 border-gray-100 shadow-md">
                 <div class="">
-                <p class="text-lg font-medium text-[#00303C] opacity-80 p-3">CloudSync</p>
-                <h1 id="title2" class="text-2xl font-semibold">Add Dark Mode</h1>
-                <p class="truncatText text-gray-500 p-3">
+                <p class="text-lg font-medium bg-white text-[#00303C] opacity-80 p-2 my-2 w-fit rounded-md">CloudSync</p>
+                <h1 id="title2" class="text-2xl text-[#00303C] font-semibold">Add Dark Mode</h1>
+                <p class="truncatText bg-white text-gray-500 p-2 my-2 rounded-md">
                     Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
                     and ensure onClick works properly.</p>
                 
                 </div>
+                <hr class="border-t-2 border-dashed border-[#3752FD]/20 my-4">
                 <div class="my-3 flex flex-col gap-2 sm:grid sm:grid-cols-7">
                     <div class="sm:col-span-4 flex flex-col justify-center">
                     <p class="text-[#00303C] opacity-80 text-base font-semibold text-center sm:text-left">Deadline</p>
@@ -155,15 +183,16 @@
             </div>
             
             <!-- card - 3 - Optimize  Home page   -->
-            <div class="p-3 rounded-lg border-1 border-gray-100 shadow-md">
+            <div class="p-3 bg-[#3752FD]/10 rounded-lg border-1 border-gray-100 shadow-md">
                 <div class="">
-                <p class="text-lg font-medium text-[#00303C] opacity-80 p-3">SwiftPay</p>
-                <h1 id="title3" class="text-2xl font-semibold">Optimize  Home page</h1>
-                <p class="truncatText text-gray-500 p-3">
+                <p class="text-lg font-medium bg-white text-[#00303C] opacity-80 p-2 my-2 w-fit rounded-md">SwiftPay</p>
+                <h1 id="title3" class="text-2xl text-[#00303C] font-semibold">Optimize  Home page</h1>
+                <p class="truncatText bg-white text-gray-500 p-2 my-2 rounded-md">
                     Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
                     and ensure onClick works properly.</p>
                 
                 </div>
+                <hr class="border-t-2 border-dashed border-[#3752FD]/20 my-4">
                 <div class="my-3 flex flex-col gap-2 sm:grid sm:grid-cols-7">
                     <div class="sm:col-span-4 flex flex-col justify-center">
                     <p class="text-[#00303C] opacity-80 text-base font-semibold text-center sm:text-left">Deadline</p>
@@ -185,15 +214,16 @@
             </div>
             
             <!-- card - 4 - Add new emoji 🤲  -->
-            <div class="p-3 rounded-lg border-1 border-gray-100 shadow-md">
+            <div class="p-3 bg-[#3752FD]/10 rounded-lg border-1 border-gray-100 shadow-md">
                 <div class="">
-                <p class="text-lg font-medium text-[#00303C] opacity-80 p-3">Meta</p>
-                <h1 id="title4" class="text-2xl font-semibold">Add new emoji 🤲</h1>
-                <p class="truncatText text-gray-500 p-3">
+                <p class="text-lg font-medium bg-white text-[#00303C] opacity-80 p-2 my-2 w-fit rounded-md">Meta</p>
+                <h1 id="title4" class="text-2xl text-[#00303C] font-semibold">Add new emoji 🤲</h1>
+                <p class="truncatText bg-white text-gray-500 p-2 my-2 rounded-md">
                     Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
                     and ensure onClick works properly.</p>
                 
                 </div>
+                <hr class="border-t-2 border-dashed border-[#3752FD]/20 my-4">
                 <div class="my-3 flex flex-col gap-2 sm:grid sm:grid-cols-7">
                     <div class="sm:col-span-4 flex flex-col justify-center">
                     <p class="text-[#00303C] opacity-80 text-base font-semibold text-center sm:text-left">Deadline</p>
@@ -215,15 +245,16 @@
             </div>
             
             <!-- card - 5 - Integrate OpenAI API   -->
-            <div class="p-3 rounded-lg border-1 border-gray-100 shadow-md">
+            <div class="p-3 bg-[#3752FD]/10 rounded-lg border-1 border-gray-100 shadow-md">
                 <div class="">
-                <p class="text-lg font-medium text-[#00303C] opacity-80 p-3">Google LLC</p>
-                <h1 id="title5" class="text-2xl font-semibold">Integrate OpenAI API</h1>
-                <p class="truncatText text-gray-500 p-3">
+                <p class="text-lg font-medium bg-white text-[#00303C] opacity-80 p-2 my-2 w-fit rounded-md">Google LLC</p>
+                <h1 id="title5" class="text-2xl text-[#00303C] font-semibold">Integrate OpenAI API</h1>
+                <p class="truncatText bg-white text-gray-500 p-2 my-2 rounded-md">
                     Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
                     and ensure onClick works properly.</p>
                 
                 </div>
+                <hr class="border-t-2 border-dashed border-[#3752FD]/20 my-4">
                 <div class="my-3 flex flex-col gap-2 sm:grid sm:grid-cols-7">
                     <div class="sm:col-span-4 flex flex-col justify-center">
                     <p class="text-[#00303C] opacity-80 text-base font-semibold text-center sm:text-left">Deadline</p>
@@ -245,15 +276,16 @@
             </div>
             
             <!-- card - 6 - Improve Job searching  -->
-            <div class="p-3 rounded-lg border-1 border-gray-100 shadow-md">
+            <div class="p-3 bg-[#3752FD]/10 rounded-lg border-1 border-gray-100 shadow-md">
                 <div class="">
-                <p class="text-lg font-medium text-[#00303C] opacity-80 p-3">Glassdoar</p>
-                <h1 id="title6" class="text-2xl font-semibold">Improve Job searching</h1>
-                <p class="truncatText text-gray-500 p-3">
+                <p class="text-lg font-medium bg-white text-[#00303C] opacity-80 p-2 my-2 w-fit rounded-md">Glassdoar</p>
+                <h1 id="title6" class="text-2xl text-[#00303C] font-semibold">Improve Job searching</h1>
+                <p class="truncatText bg-white text-gray-500 p-2 my-2 rounded-md">
                     Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
                     and ensure onClick works properly.</p>
                 
                 </div>
+                <hr class="border-t-2 border-dashed border-[#3752FD]/20 my-4">
                 <div class="my-3 flex flex-col gap-2 sm:grid sm:grid-cols-7">
                     <div class="sm:col-span-4 flex flex-col justify-center">
                     <p class="text-[#00303C] opacity-80 text-base font-semibold text-center sm:text-left">Deadline</p>
@@ -407,6 +439,241 @@
         </div>
         <!-- Congrats Modal -->
     </section>
+
+    </section>
+
+    <div id="blogNav" class="hidden">
+        <nav class=" container mx-auto bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between p-6 mt-2 border-2 rounded-2xl border-gray-100 shadow-md">
+            <a href="./" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="./assets/logo.png" class="h-8" alt="DevBoard Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"><span class="font-normal">Dev</span>Board</span>
+            </a>
+            <button data-collapse-toggle="navbar-blog" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-blog" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-blog">
+            <div class="font-medium flex flex-col justify-center items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg
+                    bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 
+                    md:dark:bg-gray-900 dark:border-gray-700">
+                    <div class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent
+                        md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500
+                        dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                            <button type="button" class="cursor-pointer clearLog text-white bg-[#3752FD] hover:bg-black 
+                            font-medium rounded-lg text-sm px-5 py-2.5 
+                            dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                            onclick="blogToDashboard('blogNav')">
+                            Back to Desk
+                            </button>
+                    </div> 
+            </div>
+            </div>
+        </nav>
+    </div>
+
+    <section id="blog" class="hidden container mx-auto bg-white p-4 mt-3 rounded-lg">
+        <h2 class="text-xl md:text-2xl font-semibold text-center my-4 ">
+            Blog
+        </h2>
+
+        
+    <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white">
+    
+    <h2 id="accordion-color-heading-1">
+        <button type="button" class=" flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-1 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-1" aria-expanded="true" aria-controls="accordion-color-body-1">
+        <span class="mx-auto sm:mx-0">What are the different ways to select an element in the DOM?</span>
+        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+        </button>
+    </h2>
+    <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
+        <div class="p-5 rounded-b-xl border border-b-1 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+            <h1 class="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">1. Selecting by ID</h1>
+            <p class="text-gray-800 dark:text-gray-400">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">getElementById</span></p> 
+            <p class="text-gray-800 dark:text-gray-400">Returns a single element that matches the given <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">id</span>.</p>     
+            <div class="relative mt-2">
+<pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
+<div class="language-html "><div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold text-gray-500">javascript</h2>
+    <button onclick="copyToClipboard('js11')" class="text-gray-500 hover:text-gray-700 cursor-pointer">📋 Copy</button>
+</div>
+<span class="text-jscode">const element = document.getElementById('<span class="text-jstext">myElement</span>');</span>
+<span class="text-jscode">console.log(element);</span>
+</div><code id="js11" class="language-html hidden">
+const element = document.getElementById('myElement');
+console.log(element);
+</code>
+</pre>
+            </div>        
+        </div>
+    </div>
+    <h2 id="accordion-color-heading-2">
+        <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-1 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-2" aria-expanded="false" aria-controls="accordion-color-body-2">
+        <span class="mx-auto sm:mx-0">What is the difference between innerHTML, innerText, and textContent ?</span>
+        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+        </button>
+    </h2>
+    <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
+        <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+            
+        </div>
+    </div>
+    <h2 id="accordion-color-heading-3">
+        <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-1 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3">
+        <span class="mx-auto sm:mx-0"> What is event delegation in the DOM?</span>
+        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+        </button>
+    </h2>
+    <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
+        <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+
+        </div>
+    </div>
+    <h2 id="accordion-color-heading-4">
+        <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200  focus:ring-1 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-4" aria-expanded="true" aria-controls="accordion-color-body-4">
+        <span class="mx-auto sm:mx-0">What is event bubbling in the DOM?</span>
+        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+        </button>
+    </h2>
+    <div id="accordion-color-body-4" class="hidden" aria-labelledby="accordion-color-heading-4">
+        <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+        
+        </div>
+    </div>
+    <h2 id="accordion-color-heading-5">
+        <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-1 border-gray-200  focus:ring-1 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-5" aria-expanded="true" aria-controls="accordion-color-body-5">
+        <span class="mx-auto sm:mx-0">How do you create, add, and remove elements using JavaScript?</span>
+        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+        </button>
+    </h2>
+    <div id="accordion-color-body-5" class="hidden " aria-labelledby="accordion-color-heading-5">
+        <div class="p-5 rounded-b-xl border border-b-1 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+            <h1 class="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">Creating an Element</h1>
+            <p class="text-gray-800 dark:text-gray-600">We can create an element using the <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">document.createElement()</span> method.</p>     
+            <div class="relative mt-2">
+<pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
+<div class="language-html "><div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold text-gray-500">javascript</h2>
+    <button onclick="copyToClipboard('js51')" class="text-gray-500 hover:text-gray-700 cursor-pointer">📋 Copy</button>
+</div>
+<span class="text-jscode">const newDiv</span> = <span class="text-jscode">document.createElement('div'); </span> <span class="text-jscomment">// element created</span>
+<span class="text-jscode">newDiv.innerText</span> = <span class="text-jstext">"Hello, I'm a new div!";</span> <span class="text-jscomment">// content added               </span>                         
+<span class="text-jscode">newDiv.classList.add('new-class');</span> <span class="text-jscomment">// class added to the element  </span>
+<span class="text-jscode">newDiv.style.color</span> = <span class="text-jstext">'blue'; </span> <span class="text-jscomment">// style added to the element  </span>
+</div><code id="js51" class="language-html hidden">
+const newDiv = document.createElement('div'); // element created
+newDiv.innerText = "Hello, I'm a new div!";   // content added
+newDiv.classList.add('new-class');            // class added to the element
+newDiv.style.color = 'blue';                  // style added to the element
+</code>
+</pre>
+            </div>        
+        
+            <h1 class="mt-3 mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">Add an Element</h1>
+            <p class="text-gray-800 dark:text-gray-600">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">appendChild()</span></p>     
+            <p class="text-gray-800 dark:text-gray-600">Adds the element as the last child of a parent element.</p>     
+            <div class="relative mt-2">
+<pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
+<div class="language-html "><div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold text-gray-500">javascript</h2>
+    <button onclick="copyToClipboard('js52')" class="text-gray-500 hover:text-gray-700 cursor-pointer">📋 Copy</button>
+</div>
+<span class="text-jscode">document.body.appendChild(newDiv);</span> <span class="text-jscomment">// Add newDiv to the body</span>
+</div><code id="js52" class="language-html hidden">
+document.body.appendChild(newDiv); // Add newDiv to the body
+</code>
+</pre>
+            </div>     
+        
+            <p class="text-gray-800 dark:text-gray-600 mt-4 ">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">append()</span></p>     
+            <p class="text-gray-800 dark:text-gray-600">Allows adding multiple elements or text at once.</p>     
+            <div class="relative mt-2">
+<pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
+<div class="language-html "><div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold text-gray-500">javascript</h2>
+    <button onclick="copyToClipboard('js53')" class="text-gray-500 hover:text-gray-700 cursor-pointer">📋 Copy</button>
+</div>
+<span class="text-jscode">document.body.append("Text before div", newDiv);</span> <span class="text-jscomment">// Add Text & newDiv to the body at once.</span>
+</div><code id="js53" class="language-html hidden">
+document.body.append("Text before div", newDiv); // Add Text & newDiv to the body at once.
+</code>
+</pre>
+            </div>   
+
+        
+            <h1 class="mt-3 mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">Remove an Element</h1>
+            <p class="text-gray-800 dark:text-gray-600 ">We can remove an element using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">remove()</span> or <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">removeChild()</span>.</p>     
+            <p class="text-gray-800 dark:text-gray-600 mt-3">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">remove()</span>, the <span class="font-medium">Modern</span> method. </p>     
+            <div class="relative mt-2">
+<pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
+<div class="language-html "><div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold text-gray-500">javascript</h2>
+    <button onclick="copyToClipboard('js54')" class="text-gray-500 hover:text-gray-700 cursor-pointer">📋 Copy</button>
+</div>
+<span class="text-jscode">newDiv.remove();</span> <span class="text-jscomment">// Removes the element directly</span>
+</div><code id="js54" class="language-html hidden">
+newDiv.remove(); // Removes the element directly
+</code>
+</pre>
+            </div> 
+
+            <p class="text-gray-800 dark:text-gray-600 mt-4 mb-1">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">removeChild()</span>, the <span class="font-medium">Older</span> method. </p>     
+            <div class="relative mt-2">
+<pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
+<div class="language-html "><div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold text-gray-500">javascript</h2>
+    <button onclick="copyToClipboard('js55')" class="text-gray-500 hover:text-gray-700 cursor-pointer">📋 Copy</button>
+</div>
+<span class="text-jscode">const parent = document.getElementById('<span class="text-jstext">parentDiv</span>');</span>
+<span class="text-jscode">const child = document.getElementById('<span class="text-jstext">childDiv</span>');</span>
+<span class="text-jscode">parent.removeChild(child); </span> <span class="text-jscomment">// Removes childDiv from parentDiv</span>
+</div><code id="js55" class="language-html hidden">
+const parent = document.getElementById('parentDiv');
+const child = document.getElementById('childDiv');
+parent.removeChild(child); // Removes childDiv from parentDiv
+</code>
+</pre>
+            </div> 
+
+        </div>
+    </div>
+    </div>
+
+    </section>
+
+    </main>
+
+    <footer>
+        <section class="container mx-auto my-3 grid grid-cols-1 md:grid-cols-2 gap-4 py-2 px-6 items-center rounded-b-lg w-full bg-white border-2 border-gray-100 shadow-sm">
+
+            <div class="font-azeret-mono font-semibold text-2xl text-[#000000] flex justify-center md:justify-start">
+                <h3>Mahmud Rayhan</h3>
+            </div>
+
+            <div class="flex justify-center md:justify-end items-center space-x-4">
+                <a href="https://twitter.com/MahmudZq">
+                    <img src="./assets/twitter.png" alt="link to twitter" class="w-12 hover:scale-125">
+                </a>
+                <a href="https://github.com/MahmudZq/">
+                    <img src="./assets/github.png" alt="link to github profile" class="w-10 hover:scale-125">
+                </a>
+                <a href="https://www.linkedin.com/in/mahmudrayhan/">
+                    <img src="./assets/linkedin.png" alt="link to linkedin profile" class="w-10 hover:scale-125">
+                </a>
+            </div>
+        </section>
+    </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <script src="./js/functions.js"></script>

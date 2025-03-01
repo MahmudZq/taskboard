@@ -94,12 +94,59 @@ function clearHistory(){
     taskDone.innerText = '23';
 }
 function getRandomLightColor() {
-    const r = Math.floor(Math.random() * 156) + 100; 
+    const r = Math.floor(Math.random() * 156) + 110; 
     const g = Math.floor(Math.random() * 156) + 100; 
-    const b = Math.floor(Math.random() * 156) + 100; 
+    const b = Math.floor(Math.random() * 156) + 140; 
     return `rgb(${r}, ${g}, ${b})`;
 }
 
 function changeBackgroundColor() {
     document.body.style.backgroundColor = getRandomLightColor();
 }
+
+async function copyToClipboard(id){
+    try{
+        const copyText = document.getElementById(id).innerText;
+        await navigator.clipboard.writeText(copyText);
+        alert("Code copied to clipboard.")
+    }
+    catch(err)  {
+                    console.log("Failed to copy", err);
+                }
+}
+
+function dashboardToBlog(id){
+
+    const navDashboard = document.getElementById(id);
+    const navBlog = document.getElementById('blogNav');
+    const dashboard = document.getElementById('dashboard');
+    const blog = document.getElementById('blog');
+
+    navDashboard.classList.add("hidden");
+    dashboard.classList.add("hidden");
+    navBlog.classList.remove("hidden");
+    blog.classList.remove("hidden");
+
+}
+
+function blogToDashboard(id){
+
+    const navBlog = document.getElementById(id);
+    const navDashboard = document.getElementById('dashboardNav');
+    const dashboard = document.getElementById('dashboard');
+    const blog = document.getElementById('blog');
+
+    navBlog.classList.add("hidden");
+    blog.classList.add("hidden");
+    navDashboard.classList.remove("hidden");
+    dashboard.classList.remove("hidden");
+
+    
+
+}
+
+
+const newDiv = document.createElement('div'); // element created
+newDiv.innerText = "Hello, I'm a new div!";   // content added
+newDiv.classList.add('new-class');            // class added to the element
+newDiv.style.color = 'blue';                  // style added to the element
