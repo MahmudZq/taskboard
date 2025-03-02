@@ -141,12 +141,5 @@ function blogToDashboard(id){
     navDashboard.classList.remove("hidden");
     dashboard.classList.remove("hidden");
 
-    
-
 }
 
-
-const newDiv = document.createElement('div'); // element created
-newDiv.innerText = "Hello, I'm a new div!";   // content added
-newDiv.classList.add('new-class');            // class added to the element
-newDiv.style.color = 'blue';                  // style added to the element

@@ -55,14 +55,14 @@
                 
                 <div class="flex flex-row items-center gap-2">
                     <div class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                        <img src="./assets/checkbox.png" alt="">
+                        <img src="./assets/checkbox.png" alt="task done counter">
                     </div>
                     <h2 id="taskDone" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                         23
                     </h2>
                 </div>
                 <div onclick="changeBackgroundColor()" class="cursor-pointer py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                <img src="./assets/theme-btn.png" alt="">
+                <img src="./assets/theme-btn.png" alt="theme color change gear">
                 </div>
         </div>
         </div>
@@ -80,7 +80,7 @@
             <div class="grid grid-cols-3 items-center  p-6 bg-white border border-gray-200
             rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <div class="flex justify-center">
-                <img src="./assets/checkbox.png" alt="">
+                <img src="./assets/checkbox.png" alt="task assigned counter">
             </div>
             <div class="col-span-2">
                 <p class="font-semibold text-gray-700 dark:text-gray-400">Task Assigned</p>
@@ -93,7 +93,7 @@
             <div onclick="dashboardToBlog('dashboardNav')" class="bg-discoverGradient border border-gray-200  rounded-lg shadow-sm
             cursor-pointer lg:col-span-2 grid grid-cols-3 items-center p-6 ">
             <div class="flex justify-center">
-                <img src="./assets/board.png" alt="">
+                <img src="./assets/board.png" alt="dev board icon">
             </div>
             <div class="col-span-2">
                 <p class="font-semibold text-xl text-white dark:text-white">Discover Something<br> New Today!</p>
@@ -103,7 +103,7 @@
             <div class=" grid grid-cols-3 justify-center items-center p-6 bg-white border border-gray-200
             rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <div class="flex justify-center">
-                <img src="./assets/calender.png" alt="">
+                <img src="./assets/calender.png" alt="calender icon">
             </div>
             <div class="col-span-2">
                 <p id="day" class="font-semibold text-[#00303C] dark:text-gray-400">
@@ -314,7 +314,7 @@
         flex flex-col gap-2">
 
         <div class="flex flex-row gap-2 justify-center">
-            <img src="./assets/activity.png" alt="">
+            <img src="./assets/activity.png" alt="Activity log icon">
             Activity Log
         </div>
         
@@ -492,8 +492,9 @@
     <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
         <div class="p-5 rounded-b-xl border border-b-1 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
             <h1 class="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">1. Selecting by ID</h1>
-            <p class="text-gray-800 dark:text-gray-400">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">getElementById</span></p> 
+            <p class="text-gray-800 dark:text-gray-400 mb-1">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">getElementById</span></p> 
             <p class="text-gray-800 dark:text-gray-400">Returns a single element that matches the given <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">id</span>.</p>     
+
             <div class="relative mt-2">
 <pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
 <div class="language-html "><div class="flex justify-between items-center">
@@ -507,7 +508,99 @@ const element = document.getElementById('myElement');
 console.log(element);
 </code>
 </pre>
-            </div>        
+            </div>
+            <p class="text-gray-800 dark:text-gray-400 mt-2"><span class="font-medium">Best for: Selecting a unique element.</span></p>             
+            <hr class="border-t-1 border-dashed border-black/50 my-4">
+
+            <h1 class="mt-4 mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">2. Selecting by Class</h1>
+            <p class="text-gray-800 dark:text-gray-400 mb-1">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">getElementsByClassName</span></p> 
+            <p class="text-gray-800 dark:text-gray-400">Returns a live <span class="font-medium">HTMLCollection</span> (like an array) of all elements that match the given class.</p>     
+
+            <div class="relative mt-2">
+<pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
+<div class="language-html "><div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold text-gray-500">javascript</h2>
+    <button onclick="copyToClipboard('js12')" class="text-gray-500 hover:text-gray-700 cursor-pointer">📋 Copy</button>
+</div>
+<span class="text-jscode">const elements = document.getElementsByClassName('<span class="text-jstext">myClass</span>');</span>
+<span class="text-jscode">console.log(elements[0]);</span> <span class="text-jscomment">// Access first element</span>
+</div><code id="js12" class="language-html hidden">
+const elements = document.getElementsByClassName('myClass');
+console.log(elements[0]); // Access first element
+</code>
+</pre>
+            </div>
+            <p class="text-gray-800 dark:text-gray-400 mt-2"><span class="font-medium">Best for: Selecting multiple elements with the same class.</span></p>             
+            <hr class="border-t-1 border-dashed border-black/50 my-4">
+
+            <h1 class="mt-4 mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">3. Selecting by Tag Name</h1>
+            <p class="text-gray-800 dark:text-gray-400 mb-1">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">getElementsByTagName</span></p> 
+            <p class="text-gray-800 dark:text-gray-400">Returns a live <span class="font-medium">HTMLCollection</span> (like an array) of all elements that match the tag name.</p>     
+
+            <div class="relative mt-2">
+<pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
+<div class="language-html "><div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold text-gray-500">javascript</h2>
+    <button onclick="copyToClipboard('js13')" class="text-gray-500 hover:text-gray-700 cursor-pointer">📋 Copy</button>
+</div>
+<span class="text-jscode">const divs = document.getElementsByTagName('<span class="text-jstext">div</span>');</span>
+<span class="text-jscode">console.log(divs[0]);</span> <span class="text-jscomment">// Access first element</span>
+</div><code id="js13" class="language-html hidden">
+const divs = document.getElementsByTagName('div'); 
+console.log(divs[0]); // Access first element 
+</code>
+</pre>
+            </div>
+            <p class="text-gray-800 dark:text-gray-400 mt-2"><span class="font-medium">Best for: Selecting all elements of a certain type (e.g., &lt;p&gt;, &lt;div&gt;).</span></p>             
+            <hr class="border-t-1 border-dashed border-black/50 my-4">
+
+
+            <h1 class="mt-4 mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">4. Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">querySelector()</span></h1>
+            <p class="text-gray-800 dark:text-gray-400">Returns the <span class="font-medium">first</span> element that matches the CSS selector.</p>     
+
+            <div class="relative mt-2">
+<pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
+<div class="language-html "><div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold text-gray-500">javascript</h2>
+    <button onclick="copyToClipboard('js14')" class="text-gray-500 hover:text-gray-700 cursor-pointer">📋 Copy</button>
+</div>
+<span class="text-jscode">const firstDiv = document.querySelector('<span class="text-jstext">div</span>');</span> <span class="text-jscomment">// Selects the first element "div" tag</span>
+<span class="text-jscode">const firstButton = document.querySelector('<span class="text-jstext">.btn</span>');</span> <span class="text-jscomment">// Selects first element with class "btn" </span>
+<span class="text-jscode">const firstInput = document.querySelector('<span class="text-jstext">input[type="text"]</span>');</span> <span class="text-jscomment">// Selects first text input</span>
+<span class="text-jscode">console.log(firstDiv);</span> 
+</div><code id="js14" class="language-html hidden">
+const firstDiv = document.querySelector('div'); // Selects the first element "div" tag
+const firstButton = document.querySelector('.btn'); // Selects first element with class "btn" 
+const firstInput = document.querySelector('input[type="text"]'); // Selects first text input
+console.log(firstDiv);
+</code>
+</pre>
+            </div>
+            <p class="text-gray-800 dark:text-gray-400 mt-2"><span class="font-medium">Best for: Selecting a single element with a CSS selector.</span></p>             
+            <hr class="border-t-1 border-dashed border-black/50 my-4">
+
+
+
+            <h1 class="mt-4 mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">5. Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">querySelectorAll()</span></h1>
+            <p class="text-gray-800 dark:text-gray-400">Returns a <span class="font-medium">NodeList</span> (like an array) of all elements that match the CSS selector.</p>     
+
+            <div class="relative mt-2">
+<pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
+<div class="language-html "><div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold text-gray-500">javascript</h2>
+    <button onclick="copyToClipboard('js15')" class="text-gray-500 hover:text-gray-700 cursor-pointer">📋 Copy</button>
+</div>
+<span class="text-jscode">const allButtons = document.querySelectorAll('<span class="text-jstext">.btn</span>');</span> <span class="text-jscomment">// Selects all elements with class "btn"</span>
+<span class="text-jscode">allButtons.forEach(<span class="text-jstext">button => console.log(button)</span>);</span> <span class="text-jscomment">// Loop through elements</span>
+</div><code id="js15" class="language-html hidden">
+const allButtons = document.querySelectorAll('.btn'); // Selects all elements with class "btn"
+allButtons.forEach(button => console.log(button)); // Loop through elements    
+</code>
+</pre>
+            </div>
+            <p class="text-gray-800 dark:text-gray-400 mt-2"><span class="font-medium">Best for: Selecting multiple elements using a CSS selector.</span></p>             
+
+
         </div>
     </div>
     <h2 id="accordion-color-heading-2">
@@ -520,7 +613,142 @@ console.log(element);
     </h2>
     <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
         <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+            <h1 class="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">1. innerHTML</h1>
+            <div class="flex flex-row items-center my-auto gap-1 ">
+            <svg width="32px" height="32px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                <path d="M335.4 744.4c17.8 13.3 37.1 24.5 57.6 33.4 14.6-11.9 30.9-21.4 48.5-28.5 22-8.8 45.1-13.2 68.5-13.2 43 0 84 14.7 117.1 41.7 20.4-8.9 39.7-20.1 57.5-33.4-2.9-18.7-3-37.7-0.3-56.6 3.4-23.5 11.1-45.8 22.8-66.2 11.7-20.5 27.1-38.3 45.6-53.1 15-11.9 31.3-21.2 49-28.1 1.3-11.4 2-22.6 2-33.5 0-10.9-0.7-22.1-2-33.5-17.6-6.8-34-16.2-48.9-28.1-18.6-14.8-34-32.7-45.7-53.1s-19.4-42.7-22.8-66.2c-2.8-18.9-2.6-37.9 0.3-56.6-17.8-13.3-37.1-24.5-57.6-33.4-33 27-74.1 41.7-117.1 41.7-23.5 0-46.6-4.5-68.5-13.2-17.6-7-33.9-16.6-48.5-28.5-20.4 8.9-39.7 20.1-57.6 33.4 3 18.7 3.1 37.7 0.3 56.6-3.4 23.5-11.1 45.8-22.9 66.2-11.7 20.4-27.1 38.3-45.6 53.1-14.9 11.9-31.3 21.2-48.9 28.1-1.3 11.3-2 22.6-2 33.5 0 11 0.7 22.2 2 33.5 17.6 6.8 34 16.2 48.9 28.1 18.6 14.8 34 32.7 45.7 53.1 21.5 37.4 29.4 80.5 22.6 122.8z" fill="#E1F0FF"></path>
+                <path d="M818 458.7l-1.9-12.2-11.8-3.6c-33.2-10.1-60.9-32.2-78.1-62.2-17.2-30-22.3-65.2-14.4-99.2l2.8-12-9.5-7.7c-25.6-20.8-54-37.3-84.7-49.1l-11.6-4.5-9 8.5c-25.1 23.8-57.9 36.9-92.3 36.9-34.3 0-67.1-13.1-92.4-36.9l-9-8.5-11.6 4.5c-30.6 11.9-59.1 28.4-84.6 49.1l-9.5 7.7 2.8 12c7.9 34 2.8 69.2-14.5 99.2-16.9 29.5-45.3 52.2-78 62.1l-11.7 3.6-1.9 12.2c-2.6 16.6-4 33.1-4 49.1s1.4 32.6 4 49.1L199 569l11.7 3.6c33.2 10.1 60.9 32.2 78.1 62.2 17.3 30.2 22.4 65.3 14.4 99.1l-2.8 12 9.5 7.7c25.5 20.7 53.9 37.3 84.6 49.1l11.5 4.5 9-8.5c25.2-23.8 58.1-36.9 92.4-36.9 34.5 0 67.3 13.1 92.3 36.9l9 8.5 11.6-4.5c30.7-11.9 59.2-28.4 84.6-49.1l9.5-7.7-2.8-11.9c-7.7-33.4-2.5-69.6 14.5-99.2 16.9-29.5 45.3-52.2 78.1-62.2L816 569l1.9-12.2c2.6-16.7 3.9-33.2 3.9-49.1 0.1-15.9-1.2-32.4-3.8-49z m-27.5 81.6c-17.1 6.6-33 15.7-47.5 27.2-18 14.4-33 31.7-44.3 51.6-11.4 19.8-18.8 41.4-22.2 64.3-2.7 18.3-2.6 36.8 0.3 54.9-17.3 12.9-36 23.8-55.8 32.5-32.1-26.2-71.9-40.5-113.6-40.5-22.8 0-45.2 4.3-66.5 12.9-17.1 6.8-32.9 16.1-47.1 27.6-19.9-8.7-38.6-19.5-55.9-32.5 6.6-41-1-82.9-21.8-119.3-11.4-19.9-26.4-37.2-44.4-51.6-14.4-11.5-30.4-20.6-47.5-27.2-1.3-11-2-21.9-2-32.5 0-10.6 0.7-21.5 2-32.5 17.1-6.6 33-15.7 47.5-27.2 18-14.3 33-31.7 44.3-51.5 11.4-19.8 18.9-41.4 22.2-64.3 2.7-18.3 2.5-36.8-0.3-54.9 17.4-12.9 36.1-23.8 55.9-32.5 14.2 11.5 30 20.8 47.1 27.6 21.3 8.5 43.7 12.9 66.5 12.9 41.7 0 81.5-14.3 113.6-40.5 19.9 8.7 38.6 19.5 55.9 32.5-2.9 18.1-3 36.6-0.3 54.9 3.3 22.8 10.8 44.5 22.2 64.3C710 416.3 725 433.7 743 448c14.4 11.5 30.4 20.6 47.5 27.2 1.3 11.1 2 22 2 32.5-0.1 10.6-0.8 21.5-2 32.6z" fill="#446EB1"></path>
+                <path d="M510.1 636.3c-68.9 0-125-56.1-125-125s56.1-125 125-125 125 56.1 125 125-56.1 125-125 125z m0-216.2c-50.3 0-91.3 40.9-91.3 91.3s40.9 91.3 91.3 91.3c50.3 0 91.3-40.9 91.3-91.3s-41-91.3-91.3-91.3z" fill="#6D9EE8"></path>
+                </g>
+            </svg>
+            <p class="text-gray-800 dark:text-gray-400 ">Reads or writes <span class="font-medium"> HTML </span> content inside an element.</p> 
+            </div>
+            <div class="flex flex-row items-center my-auto gap-1 ">
+                <svg width="32px" height="32px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                    <path d="M335.4 744.4c17.8 13.3 37.1 24.5 57.6 33.4 14.6-11.9 30.9-21.4 48.5-28.5 22-8.8 45.1-13.2 68.5-13.2 43 0 84 14.7 117.1 41.7 20.4-8.9 39.7-20.1 57.5-33.4-2.9-18.7-3-37.7-0.3-56.6 3.4-23.5 11.1-45.8 22.8-66.2 11.7-20.5 27.1-38.3 45.6-53.1 15-11.9 31.3-21.2 49-28.1 1.3-11.4 2-22.6 2-33.5 0-10.9-0.7-22.1-2-33.5-17.6-6.8-34-16.2-48.9-28.1-18.6-14.8-34-32.7-45.7-53.1s-19.4-42.7-22.8-66.2c-2.8-18.9-2.6-37.9 0.3-56.6-17.8-13.3-37.1-24.5-57.6-33.4-33 27-74.1 41.7-117.1 41.7-23.5 0-46.6-4.5-68.5-13.2-17.6-7-33.9-16.6-48.5-28.5-20.4 8.9-39.7 20.1-57.6 33.4 3 18.7 3.1 37.7 0.3 56.6-3.4 23.5-11.1 45.8-22.9 66.2-11.7 20.4-27.1 38.3-45.6 53.1-14.9 11.9-31.3 21.2-48.9 28.1-1.3 11.3-2 22.6-2 33.5 0 11 0.7 22.2 2 33.5 17.6 6.8 34 16.2 48.9 28.1 18.6 14.8 34 32.7 45.7 53.1 21.5 37.4 29.4 80.5 22.6 122.8z" fill="#E1F0FF"></path>
+                    <path d="M818 458.7l-1.9-12.2-11.8-3.6c-33.2-10.1-60.9-32.2-78.1-62.2-17.2-30-22.3-65.2-14.4-99.2l2.8-12-9.5-7.7c-25.6-20.8-54-37.3-84.7-49.1l-11.6-4.5-9 8.5c-25.1 23.8-57.9 36.9-92.3 36.9-34.3 0-67.1-13.1-92.4-36.9l-9-8.5-11.6 4.5c-30.6 11.9-59.1 28.4-84.6 49.1l-9.5 7.7 2.8 12c7.9 34 2.8 69.2-14.5 99.2-16.9 29.5-45.3 52.2-78 62.1l-11.7 3.6-1.9 12.2c-2.6 16.6-4 33.1-4 49.1s1.4 32.6 4 49.1L199 569l11.7 3.6c33.2 10.1 60.9 32.2 78.1 62.2 17.3 30.2 22.4 65.3 14.4 99.1l-2.8 12 9.5 7.7c25.5 20.7 53.9 37.3 84.6 49.1l11.5 4.5 9-8.5c25.2-23.8 58.1-36.9 92.4-36.9 34.5 0 67.3 13.1 92.3 36.9l9 8.5 11.6-4.5c30.7-11.9 59.2-28.4 84.6-49.1l9.5-7.7-2.8-11.9c-7.7-33.4-2.5-69.6 14.5-99.2 16.9-29.5 45.3-52.2 78.1-62.2L816 569l1.9-12.2c2.6-16.7 3.9-33.2 3.9-49.1 0.1-15.9-1.2-32.4-3.8-49z m-27.5 81.6c-17.1 6.6-33 15.7-47.5 27.2-18 14.4-33 31.7-44.3 51.6-11.4 19.8-18.8 41.4-22.2 64.3-2.7 18.3-2.6 36.8 0.3 54.9-17.3 12.9-36 23.8-55.8 32.5-32.1-26.2-71.9-40.5-113.6-40.5-22.8 0-45.2 4.3-66.5 12.9-17.1 6.8-32.9 16.1-47.1 27.6-19.9-8.7-38.6-19.5-55.9-32.5 6.6-41-1-82.9-21.8-119.3-11.4-19.9-26.4-37.2-44.4-51.6-14.4-11.5-30.4-20.6-47.5-27.2-1.3-11-2-21.9-2-32.5 0-10.6 0.7-21.5 2-32.5 17.1-6.6 33-15.7 47.5-27.2 18-14.3 33-31.7 44.3-51.5 11.4-19.8 18.9-41.4 22.2-64.3 2.7-18.3 2.5-36.8-0.3-54.9 17.4-12.9 36.1-23.8 55.9-32.5 14.2 11.5 30 20.8 47.1 27.6 21.3 8.5 43.7 12.9 66.5 12.9 41.7 0 81.5-14.3 113.6-40.5 19.9 8.7 38.6 19.5 55.9 32.5-2.9 18.1-3 36.6-0.3 54.9 3.3 22.8 10.8 44.5 22.2 64.3C710 416.3 725 433.7 743 448c14.4 11.5 30.4 20.6 47.5 27.2 1.3 11.1 2 22 2 32.5-0.1 10.6-0.8 21.5-2 32.6z" fill="#446EB1"></path>
+                    <path d="M510.1 636.3c-68.9 0-125-56.1-125-125s56.1-125 125-125 125 56.1 125 125-56.1 125-125 125z m0-216.2c-50.3 0-91.3 40.9-91.3 91.3s40.9 91.3 91.3 91.3c50.3 0 91.3-40.9 91.3-91.3s-41-91.3-91.3-91.3z" fill="#6D9EE8"></path>
+                    </g>
+                </svg>
+                <p class="text-gray-800 dark:text-gray-400 ">Parses HTML tags if assigned as a value.</p>
+                </div>
             
+            
+            <div class="relative mt-2">
+<pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
+<div class="language-html "><div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold text-gray-500">javascript</h2>
+    <button onclick="copyToClipboard('js21')" class="text-gray-500 hover:text-gray-700 cursor-pointer">📋 Copy</button>
+</div>
+<span class="text-jscode">document.getElementById("demo").innerHTML</span> = <span class="text-jstext">"&lt;b&gt;Hello, World!&lt;/b&gt;";</span>
+</div><code id="js21" class="language-html hidden">
+document.getElementById("demo").innerHTML = "&lt;b&gt;Hello, World!&lt;/b&gt;";
+</code>
+</pre>
+            </div>
+<h2 class="text-lg font-semibold text-gray-900 mt-3">Output (HTML rendered):</h2>
+<div class="relative mt-2 bg-white text-black border-[1px] border-black/50 px-4 py-2 rounded-md overflow-x-auto text-xl">
+<span class="text-jstext bg-gray-200 text-black px-2 py-1 rounded-lg">&lt;b&gt;Hello, World!&lt;/b&gt;</span>
+</div>
+            <hr class="border-t-1 border-dashed border-black/50 my-4">
+
+            <h1 class="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">1. innerText</h1>
+            <div class="flex flex-row items-center my-auto gap-1 ">
+            <svg width="32px" height="32px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                <path d="M335.4 744.4c17.8 13.3 37.1 24.5 57.6 33.4 14.6-11.9 30.9-21.4 48.5-28.5 22-8.8 45.1-13.2 68.5-13.2 43 0 84 14.7 117.1 41.7 20.4-8.9 39.7-20.1 57.5-33.4-2.9-18.7-3-37.7-0.3-56.6 3.4-23.5 11.1-45.8 22.8-66.2 11.7-20.5 27.1-38.3 45.6-53.1 15-11.9 31.3-21.2 49-28.1 1.3-11.4 2-22.6 2-33.5 0-10.9-0.7-22.1-2-33.5-17.6-6.8-34-16.2-48.9-28.1-18.6-14.8-34-32.7-45.7-53.1s-19.4-42.7-22.8-66.2c-2.8-18.9-2.6-37.9 0.3-56.6-17.8-13.3-37.1-24.5-57.6-33.4-33 27-74.1 41.7-117.1 41.7-23.5 0-46.6-4.5-68.5-13.2-17.6-7-33.9-16.6-48.5-28.5-20.4 8.9-39.7 20.1-57.6 33.4 3 18.7 3.1 37.7 0.3 56.6-3.4 23.5-11.1 45.8-22.9 66.2-11.7 20.4-27.1 38.3-45.6 53.1-14.9 11.9-31.3 21.2-48.9 28.1-1.3 11.3-2 22.6-2 33.5 0 11 0.7 22.2 2 33.5 17.6 6.8 34 16.2 48.9 28.1 18.6 14.8 34 32.7 45.7 53.1 21.5 37.4 29.4 80.5 22.6 122.8z" fill="#E1F0FF"></path>
+                <path d="M818 458.7l-1.9-12.2-11.8-3.6c-33.2-10.1-60.9-32.2-78.1-62.2-17.2-30-22.3-65.2-14.4-99.2l2.8-12-9.5-7.7c-25.6-20.8-54-37.3-84.7-49.1l-11.6-4.5-9 8.5c-25.1 23.8-57.9 36.9-92.3 36.9-34.3 0-67.1-13.1-92.4-36.9l-9-8.5-11.6 4.5c-30.6 11.9-59.1 28.4-84.6 49.1l-9.5 7.7 2.8 12c7.9 34 2.8 69.2-14.5 99.2-16.9 29.5-45.3 52.2-78 62.1l-11.7 3.6-1.9 12.2c-2.6 16.6-4 33.1-4 49.1s1.4 32.6 4 49.1L199 569l11.7 3.6c33.2 10.1 60.9 32.2 78.1 62.2 17.3 30.2 22.4 65.3 14.4 99.1l-2.8 12 9.5 7.7c25.5 20.7 53.9 37.3 84.6 49.1l11.5 4.5 9-8.5c25.2-23.8 58.1-36.9 92.4-36.9 34.5 0 67.3 13.1 92.3 36.9l9 8.5 11.6-4.5c30.7-11.9 59.2-28.4 84.6-49.1l9.5-7.7-2.8-11.9c-7.7-33.4-2.5-69.6 14.5-99.2 16.9-29.5 45.3-52.2 78.1-62.2L816 569l1.9-12.2c2.6-16.7 3.9-33.2 3.9-49.1 0.1-15.9-1.2-32.4-3.8-49z m-27.5 81.6c-17.1 6.6-33 15.7-47.5 27.2-18 14.4-33 31.7-44.3 51.6-11.4 19.8-18.8 41.4-22.2 64.3-2.7 18.3-2.6 36.8 0.3 54.9-17.3 12.9-36 23.8-55.8 32.5-32.1-26.2-71.9-40.5-113.6-40.5-22.8 0-45.2 4.3-66.5 12.9-17.1 6.8-32.9 16.1-47.1 27.6-19.9-8.7-38.6-19.5-55.9-32.5 6.6-41-1-82.9-21.8-119.3-11.4-19.9-26.4-37.2-44.4-51.6-14.4-11.5-30.4-20.6-47.5-27.2-1.3-11-2-21.9-2-32.5 0-10.6 0.7-21.5 2-32.5 17.1-6.6 33-15.7 47.5-27.2 18-14.3 33-31.7 44.3-51.5 11.4-19.8 18.9-41.4 22.2-64.3 2.7-18.3 2.5-36.8-0.3-54.9 17.4-12.9 36.1-23.8 55.9-32.5 14.2 11.5 30 20.8 47.1 27.6 21.3 8.5 43.7 12.9 66.5 12.9 41.7 0 81.5-14.3 113.6-40.5 19.9 8.7 38.6 19.5 55.9 32.5-2.9 18.1-3 36.6-0.3 54.9 3.3 22.8 10.8 44.5 22.2 64.3C710 416.3 725 433.7 743 448c14.4 11.5 30.4 20.6 47.5 27.2 1.3 11.1 2 22 2 32.5-0.1 10.6-0.8 21.5-2 32.6z" fill="#446EB1"></path>
+                <path d="M510.1 636.3c-68.9 0-125-56.1-125-125s56.1-125 125-125 125 56.1 125 125-56.1 125-125 125z m0-216.2c-50.3 0-91.3 40.9-91.3 91.3s40.9 91.3 91.3 91.3c50.3 0 91.3-40.9 91.3-91.3s-41-91.3-91.3-91.3z" fill="#6D9EE8"></path>
+                </g>
+            </svg>
+            <p class="text-gray-800 dark:text-gray-400 ">Gets or sets the <span class="font-medium">visible</span> text inside an element.</p> 
+            </div>
+            <div class="flex flex-row items-center my-auto gap-1 ">
+                <svg  width="32px" height="32px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                    <path d="M335.4 744.4c17.8 13.3 37.1 24.5 57.6 33.4 14.6-11.9 30.9-21.4 48.5-28.5 22-8.8 45.1-13.2 68.5-13.2 43 0 84 14.7 117.1 41.7 20.4-8.9 39.7-20.1 57.5-33.4-2.9-18.7-3-37.7-0.3-56.6 3.4-23.5 11.1-45.8 22.8-66.2 11.7-20.5 27.1-38.3 45.6-53.1 15-11.9 31.3-21.2 49-28.1 1.3-11.4 2-22.6 2-33.5 0-10.9-0.7-22.1-2-33.5-17.6-6.8-34-16.2-48.9-28.1-18.6-14.8-34-32.7-45.7-53.1s-19.4-42.7-22.8-66.2c-2.8-18.9-2.6-37.9 0.3-56.6-17.8-13.3-37.1-24.5-57.6-33.4-33 27-74.1 41.7-117.1 41.7-23.5 0-46.6-4.5-68.5-13.2-17.6-7-33.9-16.6-48.5-28.5-20.4 8.9-39.7 20.1-57.6 33.4 3 18.7 3.1 37.7 0.3 56.6-3.4 23.5-11.1 45.8-22.9 66.2-11.7 20.4-27.1 38.3-45.6 53.1-14.9 11.9-31.3 21.2-48.9 28.1-1.3 11.3-2 22.6-2 33.5 0 11 0.7 22.2 2 33.5 17.6 6.8 34 16.2 48.9 28.1 18.6 14.8 34 32.7 45.7 53.1 21.5 37.4 29.4 80.5 22.6 122.8z" fill="#E1F0FF"></path>
+                    <path d="M818 458.7l-1.9-12.2-11.8-3.6c-33.2-10.1-60.9-32.2-78.1-62.2-17.2-30-22.3-65.2-14.4-99.2l2.8-12-9.5-7.7c-25.6-20.8-54-37.3-84.7-49.1l-11.6-4.5-9 8.5c-25.1 23.8-57.9 36.9-92.3 36.9-34.3 0-67.1-13.1-92.4-36.9l-9-8.5-11.6 4.5c-30.6 11.9-59.1 28.4-84.6 49.1l-9.5 7.7 2.8 12c7.9 34 2.8 69.2-14.5 99.2-16.9 29.5-45.3 52.2-78 62.1l-11.7 3.6-1.9 12.2c-2.6 16.6-4 33.1-4 49.1s1.4 32.6 4 49.1L199 569l11.7 3.6c33.2 10.1 60.9 32.2 78.1 62.2 17.3 30.2 22.4 65.3 14.4 99.1l-2.8 12 9.5 7.7c25.5 20.7 53.9 37.3 84.6 49.1l11.5 4.5 9-8.5c25.2-23.8 58.1-36.9 92.4-36.9 34.5 0 67.3 13.1 92.3 36.9l9 8.5 11.6-4.5c30.7-11.9 59.2-28.4 84.6-49.1l9.5-7.7-2.8-11.9c-7.7-33.4-2.5-69.6 14.5-99.2 16.9-29.5 45.3-52.2 78.1-62.2L816 569l1.9-12.2c2.6-16.7 3.9-33.2 3.9-49.1 0.1-15.9-1.2-32.4-3.8-49z m-27.5 81.6c-17.1 6.6-33 15.7-47.5 27.2-18 14.4-33 31.7-44.3 51.6-11.4 19.8-18.8 41.4-22.2 64.3-2.7 18.3-2.6 36.8 0.3 54.9-17.3 12.9-36 23.8-55.8 32.5-32.1-26.2-71.9-40.5-113.6-40.5-22.8 0-45.2 4.3-66.5 12.9-17.1 6.8-32.9 16.1-47.1 27.6-19.9-8.7-38.6-19.5-55.9-32.5 6.6-41-1-82.9-21.8-119.3-11.4-19.9-26.4-37.2-44.4-51.6-14.4-11.5-30.4-20.6-47.5-27.2-1.3-11-2-21.9-2-32.5 0-10.6 0.7-21.5 2-32.5 17.1-6.6 33-15.7 47.5-27.2 18-14.3 33-31.7 44.3-51.5 11.4-19.8 18.9-41.4 22.2-64.3 2.7-18.3 2.5-36.8-0.3-54.9 17.4-12.9 36.1-23.8 55.9-32.5 14.2 11.5 30 20.8 47.1 27.6 21.3 8.5 43.7 12.9 66.5 12.9 41.7 0 81.5-14.3 113.6-40.5 19.9 8.7 38.6 19.5 55.9 32.5-2.9 18.1-3 36.6-0.3 54.9 3.3 22.8 10.8 44.5 22.2 64.3C710 416.3 725 433.7 743 448c14.4 11.5 30.4 20.6 47.5 27.2 1.3 11.1 2 22 2 32.5-0.1 10.6-0.8 21.5-2 32.6z" fill="#446EB1"></path>
+                    <path d="M510.1 636.3c-68.9 0-125-56.1-125-125s56.1-125 125-125 125 56.1 125 125-56.1 125-125 125z m0-216.2c-50.3 0-91.3 40.9-91.3 91.3s40.9 91.3 91.3 91.3c50.3 0 91.3-40.9 91.3-91.3s-41-91.3-91.3-91.3z" fill="#6D9EE8"></path>
+                    </g>
+                </svg>
+                <p class="text-gray-800 dark:text-gray-400 ">Does not process HTML tags (returns only plain text).</p>
+                </div>
+
+            
+            <div class="relative mt-2">
+<pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
+<div class="language-html "><div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold text-gray-500">javascript</h2>
+    <button onclick="copyToClipboard('js22')" class="text-gray-500 hover:text-gray-700 cursor-pointer">📋 Copy</button>
+</div>
+<span class="text-jscode">document.getElementById("demo").innerText</span> = <span class="text-jstext">"&lt;b&gt;Hello, World!&lt;/b&gt;";</span>
+</div><code id="js22" class="language-html hidden">
+document.getElementById("demo").innerText = "&lt;b&gt;Hello, World!&lt;/b&gt;";
+</code>
+</pre>
+            </div>
+<h2 class="text-lg font-semibold text-gray-900 mt-3">Output (as plain text):</h2>
+<div class="relative mt-2 bg-white text-black border-[1px] border-black/50 px-4 py-2 rounded-md overflow-x-auto text-xl">
+Hello, World!
+</div>
+            <hr class="border-t-1 border-dashed border-black/50 my-4">
+
+
+            <h1 class="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">3. textContent</h1>
+            <div class="flex flex-row items-center my-auto gap-1 ">
+            <svg width="32px" height="32px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                <path d="M335.4 744.4c17.8 13.3 37.1 24.5 57.6 33.4 14.6-11.9 30.9-21.4 48.5-28.5 22-8.8 45.1-13.2 68.5-13.2 43 0 84 14.7 117.1 41.7 20.4-8.9 39.7-20.1 57.5-33.4-2.9-18.7-3-37.7-0.3-56.6 3.4-23.5 11.1-45.8 22.8-66.2 11.7-20.5 27.1-38.3 45.6-53.1 15-11.9 31.3-21.2 49-28.1 1.3-11.4 2-22.6 2-33.5 0-10.9-0.7-22.1-2-33.5-17.6-6.8-34-16.2-48.9-28.1-18.6-14.8-34-32.7-45.7-53.1s-19.4-42.7-22.8-66.2c-2.8-18.9-2.6-37.9 0.3-56.6-17.8-13.3-37.1-24.5-57.6-33.4-33 27-74.1 41.7-117.1 41.7-23.5 0-46.6-4.5-68.5-13.2-17.6-7-33.9-16.6-48.5-28.5-20.4 8.9-39.7 20.1-57.6 33.4 3 18.7 3.1 37.7 0.3 56.6-3.4 23.5-11.1 45.8-22.9 66.2-11.7 20.4-27.1 38.3-45.6 53.1-14.9 11.9-31.3 21.2-48.9 28.1-1.3 11.3-2 22.6-2 33.5 0 11 0.7 22.2 2 33.5 17.6 6.8 34 16.2 48.9 28.1 18.6 14.8 34 32.7 45.7 53.1 21.5 37.4 29.4 80.5 22.6 122.8z" fill="#E1F0FF"></path>
+                <path d="M818 458.7l-1.9-12.2-11.8-3.6c-33.2-10.1-60.9-32.2-78.1-62.2-17.2-30-22.3-65.2-14.4-99.2l2.8-12-9.5-7.7c-25.6-20.8-54-37.3-84.7-49.1l-11.6-4.5-9 8.5c-25.1 23.8-57.9 36.9-92.3 36.9-34.3 0-67.1-13.1-92.4-36.9l-9-8.5-11.6 4.5c-30.6 11.9-59.1 28.4-84.6 49.1l-9.5 7.7 2.8 12c7.9 34 2.8 69.2-14.5 99.2-16.9 29.5-45.3 52.2-78 62.1l-11.7 3.6-1.9 12.2c-2.6 16.6-4 33.1-4 49.1s1.4 32.6 4 49.1L199 569l11.7 3.6c33.2 10.1 60.9 32.2 78.1 62.2 17.3 30.2 22.4 65.3 14.4 99.1l-2.8 12 9.5 7.7c25.5 20.7 53.9 37.3 84.6 49.1l11.5 4.5 9-8.5c25.2-23.8 58.1-36.9 92.4-36.9 34.5 0 67.3 13.1 92.3 36.9l9 8.5 11.6-4.5c30.7-11.9 59.2-28.4 84.6-49.1l9.5-7.7-2.8-11.9c-7.7-33.4-2.5-69.6 14.5-99.2 16.9-29.5 45.3-52.2 78.1-62.2L816 569l1.9-12.2c2.6-16.7 3.9-33.2 3.9-49.1 0.1-15.9-1.2-32.4-3.8-49z m-27.5 81.6c-17.1 6.6-33 15.7-47.5 27.2-18 14.4-33 31.7-44.3 51.6-11.4 19.8-18.8 41.4-22.2 64.3-2.7 18.3-2.6 36.8 0.3 54.9-17.3 12.9-36 23.8-55.8 32.5-32.1-26.2-71.9-40.5-113.6-40.5-22.8 0-45.2 4.3-66.5 12.9-17.1 6.8-32.9 16.1-47.1 27.6-19.9-8.7-38.6-19.5-55.9-32.5 6.6-41-1-82.9-21.8-119.3-11.4-19.9-26.4-37.2-44.4-51.6-14.4-11.5-30.4-20.6-47.5-27.2-1.3-11-2-21.9-2-32.5 0-10.6 0.7-21.5 2-32.5 17.1-6.6 33-15.7 47.5-27.2 18-14.3 33-31.7 44.3-51.5 11.4-19.8 18.9-41.4 22.2-64.3 2.7-18.3 2.5-36.8-0.3-54.9 17.4-12.9 36.1-23.8 55.9-32.5 14.2 11.5 30 20.8 47.1 27.6 21.3 8.5 43.7 12.9 66.5 12.9 41.7 0 81.5-14.3 113.6-40.5 19.9 8.7 38.6 19.5 55.9 32.5-2.9 18.1-3 36.6-0.3 54.9 3.3 22.8 10.8 44.5 22.2 64.3C710 416.3 725 433.7 743 448c14.4 11.5 30.4 20.6 47.5 27.2 1.3 11.1 2 22 2 32.5-0.1 10.6-0.8 21.5-2 32.6z" fill="#446EB1"></path>
+                <path d="M510.1 636.3c-68.9 0-125-56.1-125-125s56.1-125 125-125 125 56.1 125 125-56.1 125-125 125z m0-216.2c-50.3 0-91.3 40.9-91.3 91.3s40.9 91.3 91.3 91.3c50.3 0 91.3-40.9 91.3-91.3s-41-91.3-91.3-91.3z" fill="#6D9EE8"></path>
+                </g>
+            </svg>
+            <p class="text-gray-800 dark:text-gray-400 ">Retrieves or sets the <span class="font-medium">entire text content</span>, including <span class="font-semibold">hidden</span> elements.</p> 
+            </div>
+            <div class="flex flex-row items-center my-auto gap-1 ">
+                <svg  width="32px" height="32px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                    <path d="M335.4 744.4c17.8 13.3 37.1 24.5 57.6 33.4 14.6-11.9 30.9-21.4 48.5-28.5 22-8.8 45.1-13.2 68.5-13.2 43 0 84 14.7 117.1 41.7 20.4-8.9 39.7-20.1 57.5-33.4-2.9-18.7-3-37.7-0.3-56.6 3.4-23.5 11.1-45.8 22.8-66.2 11.7-20.5 27.1-38.3 45.6-53.1 15-11.9 31.3-21.2 49-28.1 1.3-11.4 2-22.6 2-33.5 0-10.9-0.7-22.1-2-33.5-17.6-6.8-34-16.2-48.9-28.1-18.6-14.8-34-32.7-45.7-53.1s-19.4-42.7-22.8-66.2c-2.8-18.9-2.6-37.9 0.3-56.6-17.8-13.3-37.1-24.5-57.6-33.4-33 27-74.1 41.7-117.1 41.7-23.5 0-46.6-4.5-68.5-13.2-17.6-7-33.9-16.6-48.5-28.5-20.4 8.9-39.7 20.1-57.6 33.4 3 18.7 3.1 37.7 0.3 56.6-3.4 23.5-11.1 45.8-22.9 66.2-11.7 20.4-27.1 38.3-45.6 53.1-14.9 11.9-31.3 21.2-48.9 28.1-1.3 11.3-2 22.6-2 33.5 0 11 0.7 22.2 2 33.5 17.6 6.8 34 16.2 48.9 28.1 18.6 14.8 34 32.7 45.7 53.1 21.5 37.4 29.4 80.5 22.6 122.8z" fill="#E1F0FF"></path>
+                    <path d="M818 458.7l-1.9-12.2-11.8-3.6c-33.2-10.1-60.9-32.2-78.1-62.2-17.2-30-22.3-65.2-14.4-99.2l2.8-12-9.5-7.7c-25.6-20.8-54-37.3-84.7-49.1l-11.6-4.5-9 8.5c-25.1 23.8-57.9 36.9-92.3 36.9-34.3 0-67.1-13.1-92.4-36.9l-9-8.5-11.6 4.5c-30.6 11.9-59.1 28.4-84.6 49.1l-9.5 7.7 2.8 12c7.9 34 2.8 69.2-14.5 99.2-16.9 29.5-45.3 52.2-78 62.1l-11.7 3.6-1.9 12.2c-2.6 16.6-4 33.1-4 49.1s1.4 32.6 4 49.1L199 569l11.7 3.6c33.2 10.1 60.9 32.2 78.1 62.2 17.3 30.2 22.4 65.3 14.4 99.1l-2.8 12 9.5 7.7c25.5 20.7 53.9 37.3 84.6 49.1l11.5 4.5 9-8.5c25.2-23.8 58.1-36.9 92.4-36.9 34.5 0 67.3 13.1 92.3 36.9l9 8.5 11.6-4.5c30.7-11.9 59.2-28.4 84.6-49.1l9.5-7.7-2.8-11.9c-7.7-33.4-2.5-69.6 14.5-99.2 16.9-29.5 45.3-52.2 78.1-62.2L816 569l1.9-12.2c2.6-16.7 3.9-33.2 3.9-49.1 0.1-15.9-1.2-32.4-3.8-49z m-27.5 81.6c-17.1 6.6-33 15.7-47.5 27.2-18 14.4-33 31.7-44.3 51.6-11.4 19.8-18.8 41.4-22.2 64.3-2.7 18.3-2.6 36.8 0.3 54.9-17.3 12.9-36 23.8-55.8 32.5-32.1-26.2-71.9-40.5-113.6-40.5-22.8 0-45.2 4.3-66.5 12.9-17.1 6.8-32.9 16.1-47.1 27.6-19.9-8.7-38.6-19.5-55.9-32.5 6.6-41-1-82.9-21.8-119.3-11.4-19.9-26.4-37.2-44.4-51.6-14.4-11.5-30.4-20.6-47.5-27.2-1.3-11-2-21.9-2-32.5 0-10.6 0.7-21.5 2-32.5 17.1-6.6 33-15.7 47.5-27.2 18-14.3 33-31.7 44.3-51.5 11.4-19.8 18.9-41.4 22.2-64.3 2.7-18.3 2.5-36.8-0.3-54.9 17.4-12.9 36.1-23.8 55.9-32.5 14.2 11.5 30 20.8 47.1 27.6 21.3 8.5 43.7 12.9 66.5 12.9 41.7 0 81.5-14.3 113.6-40.5 19.9 8.7 38.6 19.5 55.9 32.5-2.9 18.1-3 36.6-0.3 54.9 3.3 22.8 10.8 44.5 22.2 64.3C710 416.3 725 433.7 743 448c14.4 11.5 30.4 20.6 47.5 27.2 1.3 11.1 2 22 2 32.5-0.1 10.6-0.8 21.5-2 32.6z" fill="#446EB1"></path>
+                    <path d="M510.1 636.3c-68.9 0-125-56.1-125-125s56.1-125 125-125 125 56.1 125 125-56.1 125-125 125z m0-216.2c-50.3 0-91.3 40.9-91.3 91.3s40.9 91.3 91.3 91.3c50.3 0 91.3-40.9 91.3-91.3s-41-91.3-91.3-91.3z" fill="#6D9EE8"></path>
+                    </g>
+                </svg>
+                <p class="text-gray-800 dark:text-gray-400 ">Ignores HTML and returns only the text.</p>
+                </div>
+            
+            
+            <div class="relative mt-2">
+<pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
+<div class="language-html "><div class="flex justify-between items-center">
+    <h2 class="text-lg font-semibold text-gray-500">javascript</h2>
+    <button onclick="copyToClipboard('js22')" class="text-gray-500 hover:text-gray-700 cursor-pointer">📋 Copy</button>
+</div>
+<span class="text-jscode">&lt;div id="demo"&gt;</span>
+<span class="text-jstext">Hello <span class="text-jscode">&lt;span style="display: none;"&gt;</span>Hidden<span><span class="text-jscode">&lt;/span&gt;</span> <span class="text-jstext">World!</span>
+<span class="text-jscode">&lt;/div&gt;</span>
+<span class="text-jscode">console.log(document.getElementById("<span class="text-jstext">demo</span>").textContent);</span>
+</div><code id="js22" class="language-html hidden">
+&lt;div id="demo"&gt;
+        Hello &lt;span style="display: none;"&gt;Hidden&lt;/span&gt; World!
+&lt;/div&gt;
+console.log(document.getElementById("demo").textContent);  
+</code>
+</pre>
+            </div>
+<h2 class="text-lg font-semibold text-gray-900 mt-3">Output (as plain text):</h2>
+<div class="relative mt-2 bg-white text-black border-[1px] border-black/50 px-4 py-2 rounded-md overflow-x-auto text-xl">
+Hello Hidden World!
+</div>
+            <hr class="border-t-1 border-dashed border-black/50 my-4">
+
         </div>
     </div>
     <h2 id="accordion-color-heading-3">
@@ -533,6 +761,9 @@ console.log(element);
     </h2>
     <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
         <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+            Event delegation is a pattern in JavaScript that allows you to handle events efficiently by <span class="font-medium"> attaching a single event listener
+            to a parent element</span> instead of adding listeners to multiple child elements. This works because events <span class="font-medium">bubble up</span> from the target element to its ancestors.
+
 
         </div>
     </div>
@@ -546,7 +777,8 @@ console.log(element);
     </h2>
     <div id="accordion-color-body-4" class="hidden" aria-labelledby="accordion-color-heading-4">
         <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-        
+            Event bubbling is a mechanism in the DOM where an event <span class="font-medium"> starts from the target element and then propagates 
+            up (bubbles)</span> through its ancestor elements until it reaches the document.
         </div>
     </div>
     <h2 id="accordion-color-heading-5">
@@ -560,7 +792,7 @@ console.log(element);
     <div id="accordion-color-body-5" class="hidden " aria-labelledby="accordion-color-heading-5">
         <div class="p-5 rounded-b-xl border border-b-1 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
             <h1 class="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">Creating an Element</h1>
-            <p class="text-gray-800 dark:text-gray-600">We can create an element using the <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">document.createElement()</span> method.</p>     
+            <p class="text-gray-800 dark:text-gray-600 mb-1">We can create an element using the <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">document.createElement()</span> method.</p>     
             <div class="relative mt-2">
 <pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
 <div class="language-html "><div class="flex justify-between items-center">
@@ -578,10 +810,12 @@ newDiv.classList.add('new-class');            // class added to the element
 newDiv.style.color = 'blue';                  // style added to the element
 </code>
 </pre>
-            </div>        
-        
+            </div>   
+
+            <hr class="border-t-1 border-dashed border-black/50 my-4">
+
             <h1 class="mt-3 mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">Add an Element</h1>
-            <p class="text-gray-800 dark:text-gray-600">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">appendChild()</span></p>     
+            <p class="text-gray-800 dark:text-gray-600 mb-1">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">appendChild()</span></p>     
             <p class="text-gray-800 dark:text-gray-600">Adds the element as the last child of a parent element.</p>     
             <div class="relative mt-2">
 <pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
@@ -596,7 +830,7 @@ document.body.appendChild(newDiv); // Add newDiv to the body
 </pre>
             </div>     
         
-            <p class="text-gray-800 dark:text-gray-600 mt-4 ">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">append()</span></p>     
+            <p class="text-gray-800 dark:text-gray-600 mt-4  mb-1">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">append()</span></p>     
             <p class="text-gray-800 dark:text-gray-600">Allows adding multiple elements or text at once.</p>     
             <div class="relative mt-2">
 <pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
@@ -611,10 +845,11 @@ document.body.append("Text before div", newDiv); // Add Text & newDiv to the bod
 </pre>
             </div>   
 
+            <hr class="border-t-1 border-dashed border-black/50 my-4">
         
             <h1 class="mt-3 mb-2 text-xl font-semibold text-gray-900 dark:text-gray-400">Remove an Element</h1>
             <p class="text-gray-800 dark:text-gray-600 ">We can remove an element using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">remove()</span> or <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">removeChild()</span>.</p>     
-            <p class="text-gray-800 dark:text-gray-600 mt-3">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">remove()</span>, the <span class="font-medium">Modern</span> method. </p>     
+            <p class="text-gray-800 dark:text-gray-600 mt-3 mb-1">Using <span class="bg-gray-200 text-black px-2 py-1 rounded-lg">remove()</span>, the <span class="font-medium">Modern</span> method. </p>     
             <div class="relative mt-2">
 <pre class="bg-gray-200 text-sky-400 px-4 py-2 rounded-md overflow-x-auto">
 <div class="language-html "><div class="flex justify-between items-center">
